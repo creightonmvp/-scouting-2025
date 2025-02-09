@@ -1,1 +1,63 @@
-<header>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Survey Form</title>
+</head>
+<body>
+  <h1>Survey Form</h1>
+  <form id="surveyForm">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+    <br><br>
+    
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+    <br><br>
+    
+    <label for="feedback">Feedback:</label>
+    <textarea id="feedback" name="feedback" required></textarea>
+    <br><br>
+    
+    <button type="submit">Submit</button>
+  </form>
+
+  <script>
+    document.getElementById('surveyForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      
+      // Collect form data
+      const formData = new FormData(event.target);
+      
+      // Example: Send data to a server or another page (replace with actual URL)
+      const data = {
+        name: formData.get('name'),
+        email: formData.get('email'),
+        feedback: formData.get('feedback')
+      };
+
+      // Use fetch to send data to another website (here is an example)
+      fetch('http://example.com/receiveData', {  // Change the URL to your server's endpoint
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+      })
+      .then(response => response.json())
+      .then(data => {
+        console.log('Data sent successfully:', data);
+        alert('Survey submitted!');
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        alert('Something went wrong.');
+      });
+    });
+  </script>
+</body>
+</html>
+
+
+
