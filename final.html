@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scouting App Results</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .form-container {
+            margin-bottom: 20px;
+        }
+        .filter-container {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Pre Game</h2>
+
+<form id="scoutingForm">
+    <div class="form-container">
+        <label for="name">What is your name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+    </div>
+
+    <div class="form-container">
+        <label for="matchNumber">Match Number:</label>
+        <input type="number" id="matchNumber" name="matchNumber" min="0" max="100" required><br><br>
+    </div>
+
+    <div class="form-container">
+        <label for="teamNumber">Team Number:</label>
+        <input type="number" id="teamNumber" name="teamNumber" min="0" max="100" required><br><br>
+    </div>
+
+    <div class="form-container">
+        <label for="teamColor">Team Color:</label><br>
+        <label>
+            <input type="radio" id="blue" name="teamColor" value="Blue" required> Blue
+        </label><br>
+        <label>
+            <input type="radio" id="red" name="teamColor" value="Red" required> Red
+        </label><br><br>
+    </div>
+    
+
+    <h1>Auto</h1>
+
+    <div class="form-container">
+        <label>Coral level scored on:</label><br>
+        <label>
+            <input type="checkbox" id="level1" name="coralLevel" value="Level 1"> Level 1
+        </label><br>
+        <label>
+            <input type="checkbox" id="level2" name="coralLevel" value="Level 2"> Level 2
+        </label><br>
+        <label>
+            <input type="checkbox" id="level3" name="coralLevel" value="Level 3"> Level 3
+        </label><br>
+        <label>
+            <input type="checkbox" id="level4" name="coralLevel" value="Level 4"> Level 4
+        </label><br>
+        <input type="checkbox" id="None" name="teleopCoralLevel" value="None"> None
+        </label><br><br>
+    </div>
+
+
+    <div class="form-container">
+        <label for="passAutoLine">Pass Auto Line for ranking point:</label><br>
+        <label>
+            <input type="radio" id="yes" name="passAutoLine" value="Yes" required> Yes
+        </label><br>
+        <label>
+            <input type="radio" id="no" name="passAutoLine" value="No" required> No
+        </label><br><br>
+    </div>
+    
+
+
+    <div class="form-container">
+        <label>Coral level scored on:</label><br>
+        <label>
+            <input type="checkbox" id="teleopLevel1" name="teleopCoralLevel" value="Level 1"> Level 1
+        </label><br>
+        <label>
+            <input type="checkbox" id="teleopLevel2" name="teleopCoralLevel" value="Level 2"> Level 2
+        </label><br>
+        <label>
+            <input type="checkbox" id="teleopLevel3" name="teleopCoralLevel" value="Level 3"> Level 3
+        </label><br>
+        <label>
+            <input type="checkbox" id="teleopLevel4" name="teleopCoralLevel" value="Level 4"> Level 4
+        </label><br>
+        <input type="checkbox" id="None" name="teleopCoralLevel" value="None"> None
+        </label><br><br>
+    </div>
+
+
+
+    <div class="form-container">
+        <label for="algaeRemoved">Algae Removed:</label><br>
+        <input type="number" id="algaeRemoved" name="algaeRemoved" min="0" required><br><br>
+        <label for="algaescoredinnet">Algae scored in net:</label><br>
+        <input type="number" id="algaeRemoved" name="algaeRemoved" min="0" required><br><br>
+        <label>
+        </label><br><br>
+    </div>
+
+    
+    
+    <div class="form-container">
+        <label>Can move algae:</label><br>
+        <label> 
+        <input type="radio" id="Yes" name="Yes" value="Yes"> Yes
+        </label><br>
+        <label> 
+        <input type="radio" id="No" name="No" value="No"> No
+        <label>    
+        </label><br><br>
+    </div>
+
+    <div class="form-container">
+        <label>Hoe do they get game pieces:</label><br>
+        <label>
+            <input type="checkbox" id="source" name="algaeNet" value="Source"> Source
+        </label><br>
+        <label>
+            <input type="checkbox" id="ground" name="algaeNet" value="Ground"> Ground
+        </label><br>
+        <input type="checkbox" id="None" name="teleopCoralLevel" value="None"> None
+        </label><br><br>
+    </div>
+
+    <h1>End</h2>
+
+        <div class="form-container">
+            <label>Climb:</label><br>
+            <label>
+                <input type="radio" id="park" name="climb" value="Park"> Park
+            </label><br>
+            <label>
+                <input type="radio" id="shallowCage" name="climb" value="Shallow Cage"> Shallow Cage
+            </label><br>
+            <label>
+                <input type="radio" id="deepCage" name="climb" value="Deep Cage"> Deep Cage
+            </label><br>
+            <label>
+                <input type="radio" id="None" name="climb" value="None"> None
+            </label><br><br>
+        </div>
+        
+
+    <h1>Outcome</h2>
+
+    <div class="form-container">
+        <label>Outcome:</label><br>
+        <label>
+            <input type="radio" id="win" name="outcome" value="Win"> Win
+        </label><br>
+        <label>
+            <input type="radio" id="tie" name="outcome" value="Tie"> Tie
+        </label><br>
+        <label>
+            <input type="radio" id="lose" name="outcome" value="Lose"> Lose
+        </label><br><br>
+        <label for="cooperationPoint">Was the Cooperation point scored?</label>
+        <input type="radio" id="cooperationPoint" name="cooperationPoint"><br><br>
+    </div>
+
+
+    <div class="form-container">
+        <label for="message">Any other helpful information:</label><br>
+        <textarea id="message" name="message" rows="4" cols="50" placeholder="If not, leave blank"></textarea><br><br>
+    </div>
+
+    <input type="submit" value="Submit">
+</form>
+
+<h1>Survey Results</h2>
+
+<!-- Filter inputs to filter the table -->
+<div class="filter-container">
+    <label for="teamFilter">Filter by Team Number:</label>
+    <input type="number" id="teamFilter" onkeyup="filterTable()"><br><br>
+
+    <label for="matchFilter">Filter by Match Number:</label>
+    <input type="number" id="matchFilter" onkeyup="filterTable()"><br><br>
+</div>
+
+
+<table id="resultTable">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Match Number</th>
+            <th>Team Number</th>
+            <th>Team Color</th>
+            <th>Coral Level Scored On</th>
+            <th>Algae Removed</th>
+            <th>Pass Auto Line</th>
+            <th>Climb</th>
+            <th>Outcome</th>
+            <th>Additional Info</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Results will be displayed here -->
+    </tbody>
+</table>
+
+
+
+
+<script>
+    // Function to handle form submission
+    document.getElementById("scoutingForm").onsubmit = function(event) {
+        event.preventDefault(); // Prevent form from submitting and page reload
+    
+        // Collect form data
+        const name = document.getElementById("name").value;
+        const matchNumber = document.getElementById("matchNumber").value;
+        const teamNumber = document.getElementById("teamNumber").value;
+        const teamColor = [...document.querySelectorAll("input[name='teamColor']:checked")].map(input => input.value).join(", ");
+        const coralLevel = [...document.querySelectorAll("input[name='coralLevel']:checked")].map(input => input.value).join(", ");
+        const algaeRemoved = document.getElementById("algaeRemoved").value;
+        const passAutoLine = document.querySelector("input[name='passAutoLine']:checked") ? "Yes" : "No";
+        const climb = [...document.querySelectorAll("input[name='climb']:checked")].map(input => input.value).join(", ");
+        const outcome = [...document.querySelectorAll("input[name='outcome']:checked")].map(input => input.value).join(", ");
+        const message = document.getElementById("message").value;
+    
+        // Add new row to the table
+        const newRow = document.createElement("tr");
+        newRow.innerHTML = `
+            <td>${name}</td>
+            <td>${matchNumber}</td>
+            <td>${teamNumber}</td>
+            <td>${teamColor}</td>
+            <td>${coralLevel}</td>
+            <td>${algaeRemoved}</td>
+            <td>${passAutoLine}</td>
+            <td>${climb}</td>
+            <td>${outcome}</td>
+            <td>${message}</td>
+        `;
+        document.querySelector("#resultTable tbody").appendChild(newRow);
+    
+        // Store the form data in LocalStorage
+        localStorage.setItem('scoutingFormData', JSON.stringify({
+            name, matchNumber, teamNumber, teamColor, coralLevel, algaeRemoved, passAutoLine, climb, outcome, message
+        }));
+    };
+    
+    // Function to load saved form data from LocalStorage
+    function loadSavedData() {
+        const savedData = JSON.parse(localStorage.getItem('scoutingFormData'));
+        if (savedData) {
+            document.getElementById("name").value = savedData.name || '';
+            document.getElementById("matchNumber").value = savedData.matchNumber || '';
+            document.getElementById("teamNumber").value = savedData.teamNumber || '';
+            document.querySelector(`input[name="teamColor"][value="${savedData.teamColor}"]`).checked = true;
+            // You can loop over all checkboxes and radios to check them if they were selected
+            savedData.coralLevel.split(', ').forEach(level => document.getElementById(level).checked = true);
+            document.getElementById("algaeRemoved").value = savedData.algaeRemoved || '';
+            document.querySelector(`input[name='passAutoLine'][value="${savedData.passAutoLine}"]`).checked = true;
+            savedData.climb.split(', ').forEach(climb => document.querySelector(`input[name='climb'][value="${climb}"]`).checked = true);
+            document.querySelector(`input[name='outcome'][value="${savedData.outcome}"]`).checked = true;
+            document.getElementById("message").value = savedData.message || '';
+        }
+    }
+    
+    // Call loadSavedData when the page loads
+    window.onload = loadSavedData;
+    
+    // Function to filter the table based on user input
+    function filterTable() {
+        const teamFilter = document.getElementById("teamFilter").value.toLowerCase();
+        const matchFilter = document.getElementById("matchFilter").value.toLowerCase();
+        const rows = document.querySelector("#resultTable tbody").rows;
+    
+        for (let row of rows) {
+            const teamNumber = row.cells[2].textContent.toLowerCase();
+            const matchNumber = row.cells[1].textContent.toLowerCase();
+    
+            if (teamNumber.includes(teamFilter) && matchNumber.includes(matchFilter)) {
+                row.style.display = "";
+            } else {
+                row.style.display = "none";
+            }
+        }
+    }
+    </script>
+    
